@@ -3,7 +3,7 @@ $(function (w) {
         content = $(".container"),
         frame = $(".iframe_space"),
         page = $(".page-content")
-        win = $(w),
+    win = $(w),
         $trigger = $(".jsc_smooth_scroll_trigger"),
         $target = $(".jsc_smooth_scroll_target"),
         DATA = {
@@ -30,10 +30,12 @@ $(function (w) {
                 if ("page" == i) {
                     e.scrollHeader()
                     e.turnPage(s)
+                    console.log(location.pathname)
+                    "/" !== location.pathname && (location.href = "/#contact_us")
                 }
-                if ("contact_us" === i) {
-                    // "/" !== location.pathname && (location.href = "/#contact_us")
-                }
+                // if ("contact_us" === i) {
+                //     "/" !== location.pathname && (location.href = "/#contact_us")
+                // }
                 "TOP" === i ? e.scrollBottom(t.target) : e.scrollToTarget(i)
             }
         })
@@ -48,7 +50,7 @@ $(function (w) {
     }
 
     function getHomeTop() {
-        console.log('margin:',content.outerHeight() -content.innerHeight())
+        return content[0].getBoundingClientRect().top;
     }
 
     this.scrollToTop = function (e, r) {
@@ -68,12 +70,17 @@ $(function (w) {
     }
 
     this.scrollHeader = function () {
-        getHomeTop();
         var t, i = this;
-        t = $("html").offset().top
-        return content.animate({
-            marginTop: t,
-        }, 500, "swing"), !1
+        var top = getHomeTop();
+        if (top > 0) {
+            t = $("html").offset().top
+            return content.animate({
+                marginTop: t,
+            }, 500, "swing"), !1
+        } else if(top <= 0) {
+            content.css("marginTop",0)
+        }
+
     }
 
     this.scrollBottom = function () {
@@ -91,7 +98,6 @@ $(function (w) {
 
     this.turnPage = function (s) {
         var t, i = this;
-        t = $("html").offset().top
         frame.attr("src", '');
         page.hide();
         return frame.animate({
