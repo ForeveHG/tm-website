@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <style>
+
+        .main_visual {
+            position: fixed;
+            z-index: 13;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 14;
+            margin-top: calc(100vh - 58px);
+            background-color: #000;
+            overflow: hidden;
+            min-height: 58px;
+        }
+
+        .header {
+            position: absolute;
+            background-color: rgba(255, 255, 255, .9);
+            top: 0;
+            width: 100%;
+            height: 58px;
+            z-index: 23;
+            padding-right: 3rem;
+        }
+
+        .slider_info_area {
+            background-color: #333;
+            height: 90px;
+            position: relative;
+        }
+
+        .container_wrap::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .is-fixed {
+            position: fixed !important;
+        }
+
+        .header-logo {
+            background: url(image/header-logo.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 50% 50%;
+            margin: 0 0 0 30px;
+            width: 85px;
+            height: 53px;
+            z-index: 2;
+            display: inline-block;
+        }
+
+        .iframe_space {
+            height: calc(100vh - 58px)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-wrap">
+        <iframe class="main_visual iframe_space" frameborder="0" src="page/banner.html"></iframe>
+        <div class="container">
+            <header class="header">
+                <a class="header_inquiries jsc_smooth_scroll_trigger header-logo" data-smooth_scroll-target="TOP" data-page-url="page/banner.html"></a>
+                <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us" data-smooth_scroll-target="contact_us" data-page-url="contact.html">联系</a>
+                <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us2" data-smooth_scroll-target="page" data-page-url="http://www.w3school.com.cn/jsref/prop_loc_pathname.asp">通明服务</a>
+            </header>
+            <div class="page-content home">
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;" class="contact_us2 jsc_smooth_scroll_target left-black" data-smooth_scroll-point="contact_us2">
+                    <div class="pro-item" style="color:#fff;font-size:32px;text-align:center;">
+                        <h2 class="counter">10</h2>
+                        <span class="unit">亿</span>
+                    </div>
+                </div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;" class="contact_us jsc_smooth_scroll_target left-black" data-smooth_scroll-point="contact_us">
+                    <div class="pro-item" style="color:#fff;font-size:32px;text-align:center;">
+                        <h2 class="counter">4.5</h2>
+                        <span class="unit">亿</span>
+                    </div>
+                </div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+            </div>
+        </div>
+        <script src="js/libs/jquery-1.11.1.min.js"></script>
+        <script src="js/libs/waypoints.min.js"></script>
+        <script src="js/libs/jquery.counterup.min.js"></script>
+        <script src="js/custom/counter.js"></script>
+        <script src="js/custom/slide2.js"></script>
+</body>
+
+</html>
