@@ -28,23 +28,24 @@ $(function (w) {
                 var i = $(this).data(DATA.TARGET);
                 var s = $(this).data(DATA.PAGE)
                 if ("page" == i) {
-                    e.scrollHeader()
-                    e.turnPage(s)
-                    console.log(location.pathname)
-                    "/" !== location.pathname && (location.href = "/#contact_us")
+                    e.scrollToHeader()
+                    e.turnToPage(s)
+                    let reg = /page\/(.*)\.html/
+                    reg.test(s)
+                    location.href = '/#' + RegExp.$1
                 }
-                // if ("contact_us" === i) {
-                //     "/" !== location.pathname && (location.href = "/#contact_us")
-                // }
-                "TOP" === i ? e.scrollBottom(t.target) : e.scrollToTarget(i)
+                "Bottom" === i ? e.scrollBottom(t.target) : e.scrollToTarget(i)
             }
         })
 
         win.on("load", function () {
+            frame.attr("src", '');
             var t = location.hash;
             if (t) {
-                var i = t.replace(/#/, "");
-                e.scrollToTarget(i)
+                var i = t.replace(/#/, "page/") + '.html';
+                e.loadPage(i)
+            } else {
+                frame.attr('src', 'page/banner.html')
             }
         })
     }
@@ -69,7 +70,7 @@ $(function (w) {
         }, 500, "swing"), !1
     }
 
-    this.scrollHeader = function () {
+    this.scrollToHeader = function () {
         var t, i = this;
         var top = getHomeTop();
         if (top > 0) {
@@ -77,33 +78,46 @@ $(function (w) {
             return content.animate({
                 marginTop: t,
             }, 500, "swing"), !1
-        } else if(top <= 0) {
-            content.css("marginTop",0)
+        } else if (top <= 0) {
+            content.css("marginTop", 0)
         }
-
     }
 
     this.scrollBottom = function () {
+        if (getHomeTop() <= 0) {
+            var t = frame.height();
+            header.removeClass("is-fixed")
+            return this.scrollToTop();
+            // return content.animate({
+            //     marginTop: t,
+            // }, 500, "swing", function () {
+            //     location.hash = ''
+            //     frame.attr("src", "page/banner.html").css("top", 0)
+            //     content.css("margin-top", 'calc(100vh - 58px)')
+            //     page.show();
+            // }), !1
+        }
+    }
+
+    this.turnToPage = function (s) {
         var t, i = this;
-        t = frame.height();
-        frame.attr("src", '');
-        return content.animate({
-            marginTop: t,
+        frame.attr("src", s);
+        frame.css("opacity",0);
+        page.hide();
+        return frame.animate({
+            scrollTop: 58,
+            opacity: 1,
         }, 500, "swing", function () {
-            frame.attr("src", "page/banner.html").css("margin-top", 0)
-            content.css("margin-top", 'calc(100vh - 58px)')
-            page.show();
+            
         }), !1
     }
 
-    this.turnPage = function (s) {
-        var t, i = this;
-        frame.attr("src", '');
+    this.loadPage = function (s) {
+        frame.attr("src", s);
         page.hide();
-        return frame.animate({
-            marginTop: 58,
-        }, 500, "swing", function () {
-            frame.attr("src", s);
-        }), !1
+        content.css("margin-top", 0)
+        frame.css("top", 58)
     }
+
+
 }(window))

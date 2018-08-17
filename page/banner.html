@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/logo-load.css" />
     <style>
         .slick-track {
             font-size: 0;
@@ -32,14 +33,36 @@
 </head>
 
 <body>
-    <div>
-        <div class="slider_info_area">
-            <div class="slick-track" role="listbox" style="opacity: 1;">
-                <a class="banner"></a>
-            </div>
-        </div>
+    <div id="featured-wrapper" class="owl-carousel owl-theme">
+        <a class="item">
+            <img src="../image/banner1.jpg" alt="">
+        </a>
+        <a class="item">
+            <img src="../image/banner2.jpg" alt="">
+        </a>
+        <a class="item">
+            <img src="../image/banner3.jpg" alt="">
+        </a>
     </div>
-
+    <script src="../js/libs/jquery-1.11.1.min.js"></script>
+    <script src="../js/libs/waypoints.min.js"></script>
+    <script src="../js/libs/owl-carouse.min.js"></script>
+    <!-- <script src="../js/custom/f.js"></script> -->
+    <script>
+        $(function () {
+            d = $("#featured-wrapper");
+            d.owlCarousel({
+                items: 1,
+                autoPlay: true,
+                slideSpeed: 400,
+                paginationSpeed: 400,
+                lazyLoad: true,
+                lazyFollow: false,
+                lazyEffect: "fade",
+                singleItem: true,
+            });
+        })
+    </script>
 </body>
 
 </html>

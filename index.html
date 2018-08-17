@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/logo-load.css" />
     <style>
-
         .main_visual {
             position: fixed;
             z-index: 13;
@@ -21,19 +21,48 @@
             position: relative;
             z-index: 14;
             margin-top: calc(100vh - 58px);
-            background-color: #000;
+            background-color: #555;
             overflow: hidden;
             min-height: 58px;
         }
 
         .header {
             position: absolute;
-            background-color: rgba(255, 255, 255, .9);
+            background-color: #000;
             top: 0;
             width: 100%;
             height: 58px;
             z-index: 23;
             padding-right: 3rem;
+        }
+
+        .header-logo {
+            background: url(image/logo_intro.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 50% 50%;
+            margin: 0 0 0 30px;
+            width: 115px;
+            height: 58px;
+            z-index: 2;
+            display: inline-block;
+        }
+
+        .header .navigator {
+            line-height: 58px;
+            float:right;
+        }
+
+        .header .navigator, .header .navigator li{
+            display:inline-block;
+        }
+
+        .header .navigator li a{
+            color:#fff;
+            font-size:16px;
+            font-family:'Microsoft YaHei';
+            text-decoration: none;
+            padding: 25px;
         }
 
         .slider_info_area {
@@ -52,18 +81,6 @@
             position: fixed !important;
         }
 
-        .header-logo {
-            background: url(image/header-logo.png);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-position: 50% 50%;
-            margin: 0 0 0 30px;
-            width: 85px;
-            height: 53px;
-            z-index: 2;
-            display: inline-block;
-        }
-
         .iframe_space {
             height: calc(100vh - 58px)
         }
@@ -72,51 +89,93 @@
 
 <body>
     <div class="container-wrap">
-        <iframe class="main_visual iframe_space" frameborder="0" src="page/banner.html"></iframe>
-        <div class="container">
-            <header class="header">
-                <a class="header_inquiries jsc_smooth_scroll_trigger header-logo" data-smooth_scroll-target="TOP" data-page-url="page/banner.html"></a>
-                <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us" data-smooth_scroll-target="contact_us" data-page-url="contact.html">联系</a>
-                <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us2" data-smooth_scroll-target="page" data-page-url="http://www.w3school.com.cn/jsref/prop_loc_pathname.asp">通明服务</a>
-            </header>
-            <div class="page-content home">
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;" class="contact_us2 jsc_smooth_scroll_target left-black" data-smooth_scroll-point="contact_us2">
-                    <div class="pro-item" style="color:#fff;font-size:32px;text-align:center;">
-                        <h2 class="counter">10</h2>
-                        <span class="unit">亿</span>
+        <div class="site-content">
+            <div id="page-container" class="section current-page home">
+                <div class="page-overlay" style="opacity: 1; display: block; background:#000;"></div>
+                <section role="main" class="main">
+                    <div class="zone zone-content">
+                        <article class="page content-item">
+                            <header></header>
+                            <div id="intro">
+                                <div id="logo-holder" style="top: 72px;"></div>
+                            </div>
+                            <div class="top">
+                                <div id="featured-wrapper" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                    <iframe class="main_visual iframe_space" frameborder="0" src=""></iframe>
+                                    <div class="container">
+                                        <header class="header">
+                                            <a class="header_inquiries jsc_smooth_scroll_trigger header-logo" data-smooth_scroll-target="Bottom" data-page-url="page/banner.html"></a>
+                                            <ul class="navigator">
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us" data-smooth_scroll-target="contact_us" data-page-url="home">首页</a>
+                                                </li>
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us2" data-smooth_scroll-target="page" data-page-url="page/service.html">关于通明</a>
+                                                </li>
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us3" data-smooth_scroll-target="page" data-page-url="page/service.html">通明服务</a>
+                                                </li>
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us4" data-smooth_scroll-target="page" data-page-url="page/service.html">品牌案例</a>
+                                                </li>
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us5" data-smooth_scroll-target="page" data-page-url="page/service.html">新闻中心</a>
+                                                </li>
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us6" data-smooth_scroll-target="page" data-page-url="page/service.html">社会责任</a>
+                                                </li>
+                                                <li>
+                                                    <a class="header_inquiries jsc_smooth_scroll_trigger" href="#contact_us7" data-smooth_scroll-target="page" data-page-url="page/service.html">加入我们</a>
+                                                </li>
+                                            </ul>
+                                        </header>
+                                        <div class="page-content home">
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;" class="contact_us2 jsc_smooth_scroll_target left-black" data-smooth_scroll-point="contact_us2">
+                                                <div class="pro-item" style="color:#fff;font-size:32px;text-align:center;">
+                                                    <h2 class="counter">10</h2>
+                                                    <span class="unit">亿</span>
+                                                </div>
+                                            </div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;" class="contact_us jsc_smooth_scroll_target left-black" data-smooth_scroll-point="contact_us">
+                                                <div class="pro-item" style="color:#fff;font-size:32px;text-align:center;">
+                                                    <h2 class="counter">4.5</h2>
+                                                    <span class="unit">亿</span>
+                                                </div>
+                                            </div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                            <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;" class="contact_us jsc_smooth_scroll_target left-black" data-smooth_scroll-point="contact_us">
-                    <div class="pro-item" style="color:#fff;font-size:32px;text-align:center;">
-                        <h2 class="counter">4.5</h2>
-                        <span class="unit">亿</span>
-                    </div>
-                </div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
-                <div style="padding: 6.4rem 0 8rem; position: relative;"></div>
+                </section>
             </div>
         </div>
         <script src="js/libs/jquery-1.11.1.min.js"></script>
+        <script src="js/libs/combined.min.js"></script>
+        <script src="js/custom/logo-animate.js"></script>
         <script src="js/libs/waypoints.min.js"></script>
         <script src="js/libs/jquery.counterup.min.js"></script>
         <script src="js/custom/counter.js"></script>
