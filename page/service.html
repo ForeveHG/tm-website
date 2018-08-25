@@ -1,20 +1,1129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css">
     <style>
         .container {
-            width:100%;
-            height:200vh;
-            background:#eee;
+            width: 100%;
+            background: #eee;
+        }
+
+        .b-character {
+            position: relative;
+            width: 100%;
+            background: #fff;
+        }
+
+        .b-character:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: "微软雅黑";
+            text-align: center;
+            width: 100%;
+            font-weight: 700;
+            color: #f7f7f7;
+        }
+
+        .business {
+            height: calc(100vh - 20vw - 58px);
+        }
+
+        .business:before {
+            content: "BUSINESS";
+            font-size: 15vw;
+        }
+
+        .ad {
+            height: 10vw;
+        }
+
+        .ad:before {
+            content: "ADVANTAGE";
+            font-size: 10rem;
+            line-height: 1;
+            letter-spacing: .7rem;
+        }
+
+        .business {
+            height: 10vw;
+        }
+
+        .business:before {
+            content: "BUSINESS";
+            font-size: 16rem;
+            line-height: 1;
+            letter-spacing: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .b-image {
+            width: 100%;
+            background-position: 50% 50%;
+            background-size: 100vw 100vh;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .bg0 {
+            height: 30vw;
+            background-image: url(../image/school_bg.png)
+        }
+
+        .bg1 {
+            background-image: url(../image/service-bg1.jpg)
+        }
+
+        .bg2 {
+            background-image: url(../image/service-bg2.jpg)
+        }
+
+        .bg3 {
+            background-image: url(../image/service-bg3.jpg)
+        }
+
+        .bg4 {
+            background-image: url(../image/service-bg4.jpg)
+        }
+
+        .h-section {
+            height: 35vw;
+            min-height: 450px;
+        }
+
+        .char-wrap {
+            position: absolute;
+            width: 900px;
+            height: 100%;
+            min-width: 900px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .char-content {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .prompt {
+            width: 5vw;
+            height: 5vw;
+            background: #d9d8d9;
+            border-radius: 50%;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+
+        .prompt2 {
+            transform: rotate(60deg) translateX(100%);
+            background: #595a59;
+            margin-top: 2px;
+            margin-left: 17px;
+        }
+
+        .prompt3 {
+            transform: rotate(120deg) translateX(100%);
+            background: #e60012;
+            margin-top: 2px;
+            margin-left: -17px;
+        }
+
+        .prompt1:before,
+        .prompt2:before,
+        .prompt3:before {
+            content: "";
+            display: inline-block;
+            width: 5vw;
+            height: 5vw;
+            /* border-radius: 50% 50% 50% 0;   */
+        }
+
+        .prompt1:before {
+            background: #d9d8d9;
+            border-radius: 50% 50% 0 50%;
+        }
+
+        .prompt2:before {
+            background: #595a59;
+            border-radius: 50% 50% 50% 0;
+        }
+
+        .prompt3:before {
+            background: #e60012;
+            border-radius: 0 50% 50% 50%;
+
+        }
+
+        .section-content {
+            width: 900px;
+            min-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            padding-top: 1.2rem;
+            text-align: center;
+        }
+
+        .header-1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .header-2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .header-3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 2;
+            letter-spacing: 2px;
+        }
+
+        .header-4 {
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 2;
+        }
+
+        .header-1-sub {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            line-height: 2;
+        }
+
+        .header-2-sub {
+            font-size: 10px;
+            color: #a4a4a4;
+            letter-spacing: 1px;
+        }
+
+        .header-3-sub {
+            font-size: 1.1rem;
+        }
+
+        .service-brand {
+            width: 15.6vw;
+            min-width: 175px;
+            margin: 0 auto;
+        }
+
+        .serviec-brand-footer {
+            text-align: center;
+            padding-top: 2.5vw;
+        }
+
+        .circle-list {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .circle-list li {
+            width: 15rem;
+            text-align: center;
+        }
+
+        .circle-list li:not(:last-child) .circle:after {
+            content: "";
+            vertical-align: middle;
+            position: absolute;
+            right: -1vw;
+            top: 2vw;
+        }
+
+        .circle-list .circle {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .gray-circle {
+            background: rgba(120, 120, 120, .5);
+            box-shadow: 1px 1px 5px rgba(120, 120, 120, .2);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 48%;
+        }
+
+        .red-circle {
+            width: 10rem;
+            height: 10rem;
+            background: rgba(230, 0, 18, .5);
+            box-shadow: 1px 1px 5px rgba(230, 0, 18, .6);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        .red-s-circle {
+            background: rgba(230, 0, 18, 1);
+            box-shadow: 1px 1px 5px rgba(230, 0, 18, .6);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 70%;
+        }
+
+        .icon-circle1 {
+            background-image: url(../image/service-icon1.png);
+        }
+
+        .icon-circle2 {
+            background-image: url(../image/service-icon2.png);
+        }
+
+        .icon-circle3 {
+            background-image: url(../image/service-icon3.png);
+        }
+
+        .icon-circle4 {
+            background-image: url(../image/service-icon4.png);
+        }
+
+
+        .icon-circle7 {
+            background-image: url(../image/service-icon7.png);
+        }
+
+        .icon-circle8 {
+            background-image: url(../image/service-icon8.png);
+        }
+
+        .icon-circle9 {
+            background-image: url(../image/service-icon9.png);
+        }
+
+        .icon-circle10 {
+            background-image: url(../image/service-icon10.png);
+        }
+
+        .icon-circle11 {
+            background-image: url(../image/service-icon11.png);
+        }
+
+        .icon-circle12 {
+            background-image: url(../image/service-icon12.png);
+        }
+
+        .icon-circle13 {
+            background-image: url(../image/service-icon13.png);
+        }
+
+        .icon-circle14 {
+            background-image: url(../image/service-icon14.png);
+        }
+
+        .icon-circle15 {
+            background-image: url(../image/service-icon15.png);
+        }
+
+
+        .service-brand-center {
+            text-align: center;
+            padding: 1vw 0;
+        }
+
+        .white-color {
+            color: #fff;
+        }
+
+        .circle-list .desc-list li {
+            width: 100%;
+            min-width: 250px;
+            list-style-type: disc;
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: left;
+            font-size: .8rem;
+        }
+
+        .circle-list.add-margin {
+            margin-top: 5vw;
+        }
+
+        .header-2.add-margin {
+            margin-top: 2.5rem;
+        }
+
+        .header-button {
+            display: inline-block;
+            margin: 0 0 1.5rem;
+            padding: .5rem 4rem;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .btn-border {
+            border: 1px solid;
+        }
+
+        .red-bg {
+            background-color: rgb(230, 0, 18)
+        }
+
+        .margin-5 {
+            font-size: 1.2rem;
+            margin: 3.5vw 0 3vw;
+        }
+
+        .row-box {
+            text-align: center
+        }
+
+        .flex-row {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .half-box {
+            display: inline-block;
+            width: 49%;
+        }
+
+        .slick {
+            width: 18rem;
+        }
+
+        .slick .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .slick .slick-arrow img {
+            width: 25px;
+        }
+
+        .slick .slick-arrow:first-child {
+            right: -30px;
+        }
+
+        .slick .slick-arrow:last-child {
+            left: -40px;
+        }
+
+        .slick-item {
+            outline: none;
+        }
+
+        /* .slick-item-list {
+            display: flex;
+            flex-wrap: wrap;
+        } */
+
+        .slick-item-list li {
+            position: relative;
+            display: inline-block;
+            width: 5.5rem;
+            margin: .1rem;
+            overflow: hidden;
+        }
+
+        .slick-item-list li .slick-item-name {
+            position: absolute;
+            left: 5px;
+            top: 40%;
+            color: #fff;
+            font-size: .8rem;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition: transform .3s ease-in;
+            transition: transform .3s ease-in;
+        }
+
+        .slick-item-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .7);
+            opacity: 0;
+            -webkit-transition: opacity .2s ease-in;
+            transition: opacity .2s ease-in;
+        }
+
+        .slick-item-list li:hover:before {
+            opacity: 1;
+        }
+
+        .slick-item-list li:hover .slick-item-name {
+            transform: scale(1);
+        }
+
+        .slick-item-list li img {
+            width: 5.5rem;
+        }
+
+        .num-box {
+            display: inline-block;
+            padding: .5vw 0;
+            color: #fff;
+            text-align: center;
+            line-height: 1.5;
+            box-sizing: border-box;
+            font-size: 2rem;
+            font-weight: 600;
+            background-color: rgba(230, 0, 18, .65);
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .num-box:hover {
+            background-color: rgba(230, 0, 18, 1);
+        }
+
+        .s-num-box {
+            width: 10vw;
+            min-width: 12rem;
+            margin: 2px 0;
+        }
+
+        .num-box .sub-text {
+            font-size: .8rem;
+            font-weight: 500;
+        }
+
+        .l-num-box {
+            width: calc(20vw + 2px);
+            min-width: calc(24rem + 4px);
+        }
+
+        .icon-width {
+            width: 6.3rem;
+        }
+
+        .icon-height {
+            height: 6.3rem;
+        }
+
+        @media screen and (max-width: 1920px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 1600px) {
+            .icon-width {
+                width: 4.5rem;
+            }
+            .icon-height {
+                height: 4.5rem;
+            }
+            .margin-5 {
+                margin: 2rem 0 2rem 0;
+            }
+            .ad:before {
+                font-size: 9rem;
+            }
+            .business:before {
+                font-size: 12rem;
+            }
+        }
+
+        @media screen and (max-width: 1360px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            html {
+                /* font-size: 12px; */
+            }
+        }
+
+        .circle-prompt {
+            display: inline-block;
+            position: relative;
+            width: 20vw;
+            height: 20vw;
+            background: url(../image/prompt.png);
+            background-size: 100%;
+            margin-right: 1rem;
+            min-width: 320px;
+            min-height: 320px;
+            background-repeat: no-repeat;
+        }
+
+        .circle-prompt .prompt-section {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .circle-prompt .prompt-section.prompt-1 {
+            background-image: url(../image/service-icon16.png);
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-prompt .prompt-text1 {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, 50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .circle-prompt .prompt-text1 .prompt-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .circle-prompt .prompt-text1 .prompt-sub {
+            font-size: 10px;
+            display: inline-block;
+        }
+
+        .circle-prompt .prompt-text1 .prompt-index {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-top: .5rem;
+        }
+
+        .circle-prompt .prompt-section.prompt-2 {
+            background-image: url(../image/service-icon17.png);
+            position: absolute;
+            left: 15%;
+            top: 65%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-prompt .prompt-text2 {
+            position: absolute;
+            left: 43%;
+            top: 42%;
+            transform: translate(-50%, 50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .circle-prompt .prompt-text2 .prompt-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-left: -5px;
+            margin-right: 5rem;
+            margin-top: 1rem;
+        }
+
+        .circle-prompt .prompt-text2 .prompt-sub {
+            font-size: 10px;
+            display: inline-block;
+            margin-left: -5px;
+            margin-right: 5rem;
+        }
+
+        .circle-prompt .prompt-text2 .prompt-index {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-top: .5rem;
+        }
+
+        .circle-prompt .prompt-section.prompt-3 {
+            background-image: url(../image/service-icon18.png);
+            position: absolute;
+            left: 85%;
+            top: 65%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-prompt .prompt-text3 {
+            position: absolute;
+            top: 42%;
+            transform: translate(-50%, 50%);
+            text-align: center;
+            color: #fff;
+            left: 58%;
+        }
+
+        .circle-prompt .prompt-text3 .prompt-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-left: 5.5rem;
+        }
+
+        .circle-prompt .prompt-text3 .prompt-sub {
+            font-size: 10px;
+            display: inline-block;
+            margin-left: 2.8rem;
+            width: 100%;
+        }
+
+        .circle-prompt .prompt-text3 .prompt-index {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-top: .5rem;
         }
     </style>
 </head>
+
 <body>
-    <div class="container"></div>
+    <div class="wrapper">
+        <div class="banner" data-banner-url="../image/service-header.jpg"></div>
+        <div class="b-character business h-section">
+            <div class="char-wrap section-content">
+                <div class="flex-row">
+                    <div class="half-box" style="text-align:right;">
+                        <div class="circle-prompt">
+                            <div class="prompt-section prompt-1"></div>
+                            <div class="prompt-section prompt-2"></div>
+                            <div class="prompt-section prompt-3"></div>
+                            <div class="prompt-text1">
+                                <h2 class="prompt-title">营销</h2>
+                                <p class="prompt-sub">Marketing</p>
+                                <p class="prompt-index">01</p>
+                            </div>
+                            <div class="prompt-text2">
+                                <p class="prompt-index">02</p>
+                                <h2 class="prompt-title">宣传</h2>
+                                <p class="prompt-sub">Propaganda</p>
+
+                            </div>
+                            <div class="prompt-text3">
+                                <p class="prompt-index">03</p>
+                                <h2 class="prompt-title">公关</h2>
+                                <p class="prompt-sub">Public relations</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="half-box">
+                        <h2 class="header-1">整合三大业务版块</h2>
+                        <p class="header-1-sub">全面搭建新媒体内容整合营销体系</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-section b-image bg1">
+            <div class="section-content">
+                <header class="section-header">
+                    <h2 class="header-2">
+                        <span>品牌营销</span>
+                        <p class="header-2-sub">brand marketing</p>
+                    </h2>
+                    <h3 class="header-3">上游整合新媒体营销服务，下游承载新媒体渠道资源</h3>
+                    <span class="red-color header-3-sub">打造一站式新媒体闭环生态链</span>
+                </header>
+                <section class="service-brand-center">
+                    <img class="service-brand" src="../image/service-brand.png" />
+                </section>
+                <ul class="circle-list">
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">M</span>arket</p>
+                        <p class="header-4">市场调研</p>
+                    </li>
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">C</span>ompeting</p>
+                        <p class="header-4">竞品分析</p>
+                    </li>
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">A</span>udiences</p>
+                        <p class="header-4">受众分析</p>
+                    </li>
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">L</span>ocation</p>
+                        <p class="header-4">品牌定位</p>
+                    </li>
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">C</span>onstruct</p>
+                        <p class="header-4">品牌建设</p>
+                    </li>
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">G</span>eneralize</p>
+                        <p class="header-4">营销推广</p>
+                    </li>
+                    <li>
+                        <span class="circle icon-width icon-height gray-circle"></span>
+                        <p>
+                            <span class="red-color">P</span>ublic</p>
+                        <p class="header-4">公关营销</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="h-section b-image bg2">
+            <div class="section-content white-color">
+                <header class="section-header">
+                    <h2 class="header-2">
+                        <span>品牌宣传</span>
+                        <p class="header-2-sub">Brand overall planning</p>
+                    </h2>
+
+                    <h3 class="header-3">打造现象级品效合一新媒体营销推广方案</h3>
+                    <span class="red-color header-3-sub">整合新媒体整合资源，强势打造内容/话题IP</span>
+                </header>
+                <footer class="serviec-brand-footer">
+                    <ul class="circle-list add-margin">
+                        <li>
+                            <span class="circle red-circle icon-circle12"></span>
+                            <p class="header-4">媒介资源</p>
+                            <ul class="desc-list">
+                                <li>新媒体全平台整合资源</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="circle red-circle icon-circle13"></span>
+                            <p class="header-4">宣传营销</p>
+                            <ul class="desc-list">
+                                <li>口碑营销</li>
+                                <li>事件营销</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="circle red-circle icon-circle14"></span>
+                            <p class="header-4">渠道推广</p>
+                            <ul class="desc-list">
+                                <li>渠道覆盖新媒体全平台</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="circle red-circle icon-circle15"></span>
+                            <p class="header-4">监测中心</p>
+                            <ul class="desc-list">
+                                <li>自主研发数据监测平台,实时掌握投放数据,分析投放效果</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div class="h-section b-image bg3">
+            <div class="section-content">
+                <header class="section-header">
+                    <h2 class="header-2">
+                        <span>公关营销</span>
+                        <p class="header-2-sub">public relations marketing</p>
+                    </h2>
+
+                </header>
+                <footer class="serviec-brand-footer">
+                    <p class="red-color header-3-sub header-button btn-border">定制化舆情维护策划流程</p>
+                    <ul class="circle-list">
+                        <li>
+                            <span class="circle icon-width icon-height icon-circle7 gray-circle"></span>
+                            <p class="header-4">自有舆情监测平台</p>
+                        </li>
+                        <li>
+                            <span class="circle icon-width icon-height icon-circle8 gray-circle"></span>
+                            <p class="header-4">定制化舆情服务</p>
+                        </li>
+                        <li>
+                            <span class="circle icon-width icon-height icon-circle9 gray-circle"></span>
+                            <p class="header-4">实时舆情维护</p>
+                        </li>
+                        <li>
+                            <span class="circle icon-width icon-height icon-circle10 gray-circle"></span>
+                            <p class="header-4">数据分析结案反馈</p>
+                        </li>
+                        <li>
+                            <span class="circle icon-width icon-height icon-circle11 gray-circle"></span>
+                            <p class="header-4">7*24时执行团队</p>
+                        </li>
+                    </ul>
+                </footer>
+                <footer class="serviec-brand-footer">
+                    <p class="red-color header-3-sub header-button btn-border">定制化艺人粉丝营销</p>
+                    <ul class="circle-list">
+                        <li>
+                            <div class="icon-width icon-height circle red-s-circle icon-circle1"></div>
+                            <p class="header-4">明星粉丝运营</p>
+                        </li>
+                        <li>
+                            <div class="icon-width icon-height circle red-s-circle icon-circle2"></div>
+                            <p class="header-4">模拟真实粉丝行为</p>
+                        </li>
+                        <li>
+                            <div class="icon-width icon-height circle red-s-circle icon-circle3"></div>
+                            <p class="header-4">实时掌控粉丝动向</p>
+                        </li>
+                        <li>
+                            <div class="icon-width icon-height circle red-s-circle icon-circle4"></div>
+                            <p class="header-4">监测维护艺人相关传播内容</p>
+                        </li>
+                    </ul>
+                </footer>
+
+            </div>
+        </div>
+        <div class="b-character ad h-section">
+            <div class="char-wrap section-content">
+                <header class="section-header">
+                    <h2 class="header-2 add-margin">
+                        <span>服务优势</span>
+                        <p class="header-2-sub">Service advantage</p>
+                    </h2>
+                </header>
+                <footer class="serviec-brand-footer">
+                    <p class="header-3-sub header-button red-bg white-color margin-5">新媒体平台资源矩阵营销</p>
+                    <ul class="circle-list">
+                        <li>
+                            <img class="icon-width" src="../image/service1.png" />
+                            <p class="header-4">全网平台覆盖</p>
+                            <ul class="desc-list">
+                                <li>KOL资源覆盖新媒体全平台。</li>
+                                <li>整合多平台有效联动，打造营销热点，提升品牌影响力。</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="icon-width" src="../image/service2.png" />
+                            <p class="header-4">深度垂直布局</p>
+                            <ul class="desc-list">
+                                <li>KOL资源覆盖30+垂直品类行业，强大的资源支撑。</li>
+                                <li>深度布局垂直领域，迅速攻占品牌口碑。</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="icon-width" src="../image/service3.png" />
+                            <p class="header-4">精准圈层营销</p>
+                            <ul class="desc-list">
+                                <li>通明传媒拥有1W+独家小V资源，致力打造新媒体平台意见领袖中坚力量。</li>
+                                <li>圈层发声，精准覆盖目标客群快速实现品牌传播，提升营销效果。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div class="h-section b-image bg4">
+            <div class="section-content">
+                <div class="row-box">
+                    <p class="header-3-sub header-button red-bg white-color margin-5">独家/签约KOL优势资源</p>
+                </div>
+                <div class="flex-row">
+                    <div class="half-box">
+                        <div class="slick">
+                            <div class="slick-item">
+                                <ul class="slick-item-list">
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                        <span class="slick-item-name">name</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slick-item">
+                                <ul class="slick-item-list">
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slick-item">
+                                <ul class="slick-item-list">
+                                    <li>
+                                        <img src="../image/kol1.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                    <li>
+                                        <img src="../image/kol2.png" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="half-box">
+                        <div class="num-box s-num-box red-bg">
+                            <span class="counter">30</span>+
+                            <p class="sub-text">独家博主</p>
+                        </div>
+                        <div class="num-box s-num-box red-bg">
+                            <span class="counter">100</span>+
+                            <p class="sub-text">签约博主</p>
+                        </div>
+                        <div class="num-box s-num-box red-bg">
+                            <span class="counter">10</span>+
+                            <p class="sub-text">独家知乎大V</p>
+                        </div>
+                        <div class="num-box s-num-box red-bg">
+                            <span class="counter">100</span>+
+                            <p class="sub-text">深度合作知乎大V</p>
+                        </div>
+                        <div class="num-box s-num-box red-bg">
+                            <span class="counter">3000</span>+
+                            <p class="sub-text">小V兼职</p>
+                        </div>
+                        <div class="num-box s-num-box red-bg">
+                            <span class="counter">10000</span>+
+                            <p class="sub-text">小V博主</p>
+                        </div>
+                        <div class="num-box l-num-box red-bg">
+                            <span>数百次</span>+
+                            <span class="sub-text">公众号投放经验</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-section">
+            <div class="section-content">
+                <div class="serviec-brand-footer">
+                    <p class="header-3-sub header-button red-bg white-color margin-5">资源覆盖新媒体全平台 深耕垂直领域</p>
+                </div>
+            </div>
+        </div>
+        <script src="../js/libs/jquery-1.11.1.min.js"></script>
+        <script src="../js/libs/slick.min.js"></script>
+        <script src="../js/libs/waypoints.min.js"></script>
+        <script src="../js/libs/jquery.counterup.min.js"></script>
+        <script src="../js/custom/counter.js"></script>
+        <script>
+            $(function () {
+                let $header = $(".banner"),
+                    banner = $header.data("banner-url"),
+                    DATA = {
+
+                    };
+                $header.css("backgroundImage", "url(" + banner + ")");
+                $('.slick').slick({
+                    arrows: true,
+                    nextArrow: '<div><img src="../image/left-arrow-slide.png"/></div>',
+                    prevArrow: '<div><img src="../image/right-arrow-slide.png"/></div>'
+                });
+            })
+        </script>
 </body>
+
 </html>

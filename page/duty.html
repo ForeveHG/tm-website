@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>社会责任-通明传媒</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/logo-load.css" />
+    <style>
+        .owl-carousel .owl-wrapper-outer {
+            height: 300px;
+        }
+
+        .content header {
+            padding: 1rem 0;
+        }
+
+        .content-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -20px;
+        }
+
+        .list-item {
+            position: relative;
+            height: 350px;
+            flex: 1;
+            background: #eee;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            min-width: 30%;
+            border-top: 5px solid #E60516;
+        }
+
+        .item-header:hover,
+        .item-image:hover+.item-header {
+            height: 13em;
+            -webkit-transition: height 0.3s ease-in-out;
+            -moz-transition: height 0.3s ease-in-out;
+            -ms-transition: height 0.3s ease-in-out;
+            -o-transition: height 0.3s ease-in-out;
+            transition: height 0.3s ease-in-out;
+        }
+        .item-header:hover >.item-header-content,
+        .item-image:hover +.item-header .item-header-content {
+            opacity: 1;
+            -webkit-transition: opacity 0.3s ease-in-out;
+            -moz-transition: opacity 0.3s ease-in-out;
+            -ms-transition: opacity 0.3s ease-in-out;
+            -o-transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .list-half {
+            min-width: 45%;
+        }
+
+        .item-header {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5.8em;
+            padding: 1.6em;
+            background: #ffffff;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transition: height 0.2s ease-in-out 0.1s;
+            -moz-transition: height 0.2s ease-in-out 0.1s;
+            -ms-transition: height 0.2s ease-in-out 0.1s;
+            -o-transition: height 0.2s ease-in-out 0.1s;
+            transition: height 0.2s ease-in-out 0.1s;
+        }
+
+        .item-header:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            margin: 0 0.25em;
+            border: transparent solid 0.8em;
+            border-top-color: #ffffff;
+        }
+
+        .item-image {
+            height: 70%;
+            margin-top: 8.8em;
+            overflow: hidden;
+        }
+
+        .item-image img {
+            width: auto;
+            height: 100%;
+        }
+
+        .item-header .red-color {
+            margin-right: .5rem;
+            color: #E60516;
+        }
+
+        .item-header .item-header-title {
+            font-size: .9vw;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+
+        .item-header .item-header-date {
+            margin-top: .3rem;
+            color: #838383;
+            letter-spacing: 1px;
+        }
+
+        .item-header .item-header-content {
+           opacity: 0;
+        }
+
+        .item-header .item-header-text {
+            margin: 1rem 0;
+            font-size: .8vw;
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color:#838383;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner" data-banner-url="../image/duty-header.jpg"></div>
+        <section class="content">
+            <header>
+                <div id="featured-wrapper" class="owl-carousel owl-theme">
+                    <a class="featured item">
+                        <img src="../image/banner1.jpg" alt="">
+                    </a>
+                    <a class="featured item">
+                        <img src="../image/banner2.jpg" alt="">
+                    </a>
+                    <a class="featured item">
+                        <img src="../image/banner3.jpg" alt="">
+                    </a>
+                </div>
+            </header>
+            <section>
+                <ul class="content-list">
+                    <li class="list-item">
+                        <div class="item-image">
+                            <img src="../image/banner1.jpg" />
+                        </div>
+                        <div class="item-header">
+                            <h2 class="item-header-title">通明传媒</h2>
+                            <h3 class="item-header-title">90后CEO开展爱心助学活动</h3>
+                            <p class="item-header-date">
+                                <span class="red-color">时间:</span>2017年2月25日</p>
+                            <div class="item-header-content">
+                                <span class="item-header-text">通明传媒90后CEO开展爱心助学活动</span>
+                                <div class="content-more">点击了解详情</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item"></li>
+                    <li class="list-item"></li>
+                    <li class="list-item list-half"></li>
+                    <li class="list-item list-half"></li>
+                    <li class="list-item"></li>
+                    <li class="list-item"></li>
+                    <li class="list-item"></li>
+                </ul>
+            </section>
+            <div class="page">
+                <div class="digg4">
+                    <a class="prev" href="">
+                        <img src="../image/left-arrow.png" alt="">
+                    </a>
+                    <a href="javascript:;" class="current">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="">7</a>
+                    <a class="next" href="">
+                        <img src="../image/right-arrow.png" alt="">
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <script src="../js/libs/jquery-1.11.1.min.js"></script>
+    <script src="../js/libs/combined.min.js"></script>
+    <script src="../js/libs/owl-carouse.min.js"></script>
+    <script src="../js/custom/banner-load.js"></script>
+    <script>
+        $(function () {
+            let $header = $(".banner"),
+                banner = $header.data("banner-url");
+            $header.css("backgroundImage", "url(" + banner + ")")
+            $('#owl-demo').owlCarousel({
+                items: 1,
+                autoPlay: true
+            });
+        })
+    </script>
+</body>
+
+</html>

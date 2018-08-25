@@ -1,0 +1,25 @@
+@charset "utf-8";
+*{padding:0;margin:0;}
+html{color:#525252;background:#FFF;}
+body,button,code,dd,del,div,dl,dt,em,form,h1,h2,h3,h4,h5,h6,html,img,input,label,li,ol,p,pre,select,span,strong,table,tbody,td,textarea,tfoot,th,tr,ul,figure{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset, img{border:0;}
+em, strong{font-style:normal;font-weight:bold;}
+ul li{list-style:none;}
+/* ul.li_fl li{float: left;} */
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+body, input, button, textarea{font-size:10px;font-family:"microsoft yahei", Arial,Helvetica,sans-serif;}
+a{ text-decoration:none;color: #666;}
+input, button, textarea, select{margin: 0;padding: 0;outline: none;}
+a:hover{ cursor:pointer;}
+th, td{vertical-align: middle;}
+.clearfix:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.a_bl{display: block;text-align: center;}
+.a_linebl{display: inline-block;text-align: center;}

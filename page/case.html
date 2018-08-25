@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>案例详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css">
+    <style>
+        .case-wrapper {
+            position: relative;
+        }
+
+        .case-wrapper:before {
+            position: absolute;
+            content: "";
+            background-color: #000;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .header-banner:before {
+            width: 100%;
+            height: 300px;
+            background: #000;
+            -webkit-animation: LEFT-PAN .4s ease-out 1;
+            animation: LEFT-PAN .4s ease-out 1;
+        }
+
+        .p-work-detail_slider-container {
+            padding: 220px 10rem;
+        }
+
+        @-webkit-keyframes LEFT-PAN {
+            0% {
+                width: 0%
+            }
+            100% {
+                width: 100%
+            }
+        }
+
+        @keyframes LEFT-PAN {
+            0% {
+                width: 0%
+            }
+            100% {
+                width: 100%
+            }
+        }
+
+        .slider-image-wrap {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            margin: 10px;
+            height: 9rem;
+        }
+
+        .case-content {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-indent: 2rem;
+            line-height: 1.5;
+        }
+
+        .c-back_link_wrap {
+            margin-top: 30px;
+        }
+
+        .c-back_link {
+            padding-left: 32px;
+            line-height: .9;
+            font-size: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .c-back_link:before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 3px;
+            left: 10px;
+            width: 7px;
+            height: 7px;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            -webkit-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+
+        .case-detail_section {
+            margin-top: 60px;
+        }
+
+        .header-2 {
+            font-size: 22px;
+            color: #000;
+            font-weight: 400;
+        }
+
+        .panel_hover {
+            margin-top: 30px;
+        }
+
+        .panel_item {
+            width: 25%;
+            position: relative;
+            overflow: hidden;
+            float: left;
+        }
+
+        .panel_item img {
+            width: 100%;
+            -webkit-transition: -webkit-transform .5s ease;
+            transition: -webkit-transform .5s ease;
+            transition: transform .5s ease;
+            transition: transform .5s ease, -webkit-transform .5s ease;
+        }
+
+        .panel_item:hover img {
+            -webkit-transform: scale(1.1, 1.1);
+            -ms-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+        }
+
+        .c-panel_info_area {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: transparent;
+            color: #fff;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+        }
+
+        .panel_item:hover .c-panel_info_area {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            color: #fff;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+            background: rgba(0, 0, 0, .6);
+        }
+
+        .c-panel_info {
+            padding: 0 1.6rem;
+            position: absolute;
+            opacity: 0;
+            top: 42%;
+            -webkit-transform: translateY(-20%) scale(.7);
+            -ms-transform: translateY(-20%) scale(.7);
+            transform: translateY(-20%) scale(.7);
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+
+        .panel_item .c-panel_info_area:hover .c-panel_info {
+            opacity: 1;
+            -webkit-transform: translateY(-20%) scale(1);
+            -ms-transform: translateY(-20%) scale(1);
+            transform: translateY(-20%) scale(1);
+        }
+
+        .panel_item .c-panel_title {
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        .panel_item .c-panel_desc {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-top: 1.6rem;
+        }
+
+        .slick-initialized .slick-slide {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="case-wrapper">
+        <div class="p-work-detail_slider-container jsc_animate_order_contents jsc_animate_delay" data-animate-order="fadeIn">
+            <div class="c-slider_images">
+                <div class="slider-for">
+                    <img src="../image/DSC00038.jpg" />
+                    <img src="../image/DSC02374.jpg" />
+                    <img src="../image/DSC03434-1.jpg" />
+                    <img src="../image/DSC02965.jpg" />
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-image-wrap">
+                        <img src="../image/DSC00038.jpg" alt="">
+                    </div>
+                    <div class="slider-image-wrap">
+                        <img src="../image/DSC02374.jpg" alt="">
+                    </div>
+                    <div class="slider-image-wrap">
+                        <img src="../image/DSC03434-1.jpg" alt="">
+                    </div>
+                    <div class="slider-image-wrap">
+                        <img src="../image/DSC02965.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="case-content">
+                文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+            </div>
+            <div class="c-back_link_wrap">
+                <a class="c-back_link" href="page/case.html">
+                    <span>返回我们的电影宣传</span>
+                </a>
+            </div>
+            <div class="case-detail_section">
+                <h2 class="header-2">其他案例</h2>
+                <ul class="panel_hover">
+                    <li class="panel_item">
+                        <img src="../image/item_1-5.jpg">
+                        <a class="c-panel_info_area" href="https://www.hakuhodo.cn/work/the-curator.html">
+                            <div class="c-panel_info">
+                                <div class="c-panel_title">
+                                    SC ASSET </div>
+                                <div class="c-panel_desc">
+                                    The Curator </div>
+                            </div>
+                            <div class="c-panel_link"></div>
+                        </a>
+                    </li>
+                    <li class="panel_item">
+                        <img src="../image/item_1-6.jpg">
+                        <a class="c-panel_info_area" href="https://www.hakuhodo.cn/work/the-curator.html">
+                            <div class="c-panel_info">
+                                <div class="c-panel_title">
+                                    SC ASSET </div>
+                                <div class="c-panel_desc">
+                                    The Curator </div>
+                            </div>
+                            <div class="c-panel_link"></div>
+                        </a>
+                    </li>
+                    <li class="panel_item">
+                        <img src="../image/item_1-7.jpg">
+                        <a class="c-panel_info_area" href="https://www.hakuhodo.cn/work/the-curator.html">
+                            <div class="c-panel_info">
+                                <div class="c-panel_title">
+                                    SC ASSET </div>
+                                <div class="c-panel_desc">
+                                    The Curator </div>
+                            </div>
+                            <div class="c-panel_link"></div>
+                        </a>
+                    </li>
+                    <li class="panel_item">
+                        <img src="../image/item_1-8.jpg">
+                        <a class="c-panel_info_area" href="https://www.hakuhodo.cn/work/the-curator.html">
+                            <div class="c-panel_info">
+                                <div class="c-panel_title">
+                                    SC ASSET </div>
+                                <div class="c-panel_desc">
+                                    The Curator </div>
+                            </div>
+                            <div class="c-panel_link"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/libs/jquery-1.11.1.min.js"></script>
+    <script src="../js/libs/combined.min.js"></script>
+    <script src="../js/libs/slick.min.js"></script>
+    <script>
+        $(function () {
+            $(".case-wrapper").addClass("header-banner");
+            this.$contents = $(".jsc_animate_order_contents")
+            this.$contents.css("opacity",0)
+            fadeUp(this.$contents);
+            function fadeUp(e) {
+                var t = "auto" === e.css("top") ? 100 : e.css("top").replace("px", "") + 100;
+                e.hasClass("jsc_animate_delay") ? setTimeout(
+                    function () {
+                        TweenLite.from(e, 1, {
+                            ease: easeOut(e),
+                            y: t
+                        }), TweenLite.to(e, 1, {
+                            autoAlpha: 1
+                        })
+                    }, 200) : (TweenLite.from(e, 1, {
+                    ease: easeOut(e),
+                    y: t
+                }), TweenLite.to(e, 1, {
+                    autoAlpha: 1
+                }))
+            }
+
+            function easeOut(e) {
+                return 1 - Math.pow(2, -10 * e)
+            }
+
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 10,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: false,
+                centerMode: false,
+                focusOnSelect: true
+            });
+
+        })
+    </script>
+</body>
+
+</html>

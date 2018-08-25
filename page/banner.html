@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/logo-load.css" />
     <style>
         .slick-track {
@@ -34,35 +34,34 @@
 
 <body>
     <div id="featured-wrapper" class="owl-carousel owl-theme">
-        <a class="item">
-            <img src="../image/banner1.jpg" alt="">
-        </a>
-        <a class="item">
-            <img src="../image/banner2.jpg" alt="">
-        </a>
-        <a class="item">
-            <img src="../image/banner3.jpg" alt="">
-        </a>
+        <div id="work_79797" class="featured item">
+            <div class="featured-image" 
+                data-mobile="../image/banner1.jpg" 
+                data-tablet="../image/banner1.jpg"
+                data-desktop="../image/banner1.jpg"
+            ></div>
+        </div>
+        <div id="work_79797" class="featured item">
+            <div class="featured-image" 
+                data-mobile="../image/banner2.jpg" 
+                data-tablet="../image/banner2.jpg"
+                data-desktop="../image/banner2.jpg"
+            ></div>
+        </div>
+        <div id="work_79797" class="featured item">
+            <div class="featured-image" 
+                data-mobile="../image/banner3.jpg" 
+                data-tablet="../image/banner3.jpg"
+                data-desktop="../image/banner3.jpg"
+            ></div>
+        </div>
     </div>
     <script src="../js/libs/jquery-1.11.1.min.js"></script>
+    <script src="../js/libs/combined.min.js"></script>
     <script src="../js/libs/waypoints.min.js"></script>
     <script src="../js/libs/owl-carouse.min.js"></script>
-    <!-- <script src="../js/custom/f.js"></script> -->
-    <script>
-        $(function () {
-            d = $("#featured-wrapper");
-            d.owlCarousel({
-                items: 1,
-                autoPlay: true,
-                slideSpeed: 400,
-                paginationSpeed: 400,
-                lazyLoad: true,
-                lazyFollow: false,
-                lazyEffect: "fade",
-                singleItem: true,
-            });
-        })
-    </script>
+    <script src="../js/custom/logo-animate.js"></script>
+    <script src="../js/custom/banner-load.js"></script>
 </body>
 
 </html>

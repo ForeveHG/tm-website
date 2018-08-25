@@ -1,4 +1,71 @@
-* {
-    padding: 0;
-    margin: 0;
+.content {
+    width: 70%;
+    min-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 1.7rem;
+}
+
+.weight {
+    font-weight: 700;
+}
+
+.wrapper {
+    min-width: 1080px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 26.785vw;
+    min-height: 360px;
+}
+
+.content header {
+    padding: 2rem 0 0;
+}
+
+.page {
+    text-align: center;
+}
+
+.page .digg4 {
+    display: inline-block;
+}
+
+.page a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    overflow: hidden;
+}
+
+.page a.current,
+.page a:hover {
+    color: #fff;
+    background: #e60012;
+    border-radius: 50%;
+}
+
+.content-more {
+    padding: 5px;
+    cursor: pointer;
+    width: 100px;
+    border: 1px solid #525252;
+    border-radius: 5px;
+    background: url(../image/link_arrow.png) no-repeat;
+    background-position: 81px 12px;
+    background-size: 20px;
+}
+
+.red-color {
+    color: #e60012;
 }
